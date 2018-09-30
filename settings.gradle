@@ -1,0 +1,1 @@
+include ':app', ':ctrl-beacon-v1'
