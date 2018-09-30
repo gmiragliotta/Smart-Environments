@@ -246,7 +246,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     @Override
     public synchronized void onStop() {
         super.onStop();
-        SpeechRecognitionTrigger.commandCanBeStarted = true;
+
         localBroadcastManager.unregisterReceiver(mSmartCoreReceiver);
     }
 
@@ -255,6 +255,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         if(mSpeechIntentService != null) {
             stopService(mSpeechIntentService);
         }
+        SpeechRecognitionTrigger.commandCanBeStarted = true;
+
         super.onDestroy();
     }
 
